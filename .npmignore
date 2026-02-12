@@ -1,0 +1,4 @@
+.github/
+.changeset/
+svgo.config.js
+scripts/

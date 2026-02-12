@@ -1,0 +1,42 @@
+name: Icon Request
+description: Request a new icon to be added to Boxicons
+labels: ["icon request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for requesting a new icon! Please provide as much detail as possible.
+  - type: input
+    id: name
+    attributes:
+      label: Icon Name
+      description: What should the icon be called? (e.g. `heart-pulse`)
+      placeholder: icon-name
+    validations:
+      required: true
+  - type: checkboxes
+    id: style
+    attributes:
+      label: Desired Styles
+      options:
+        - label: Regular (Outline)
+        - label: Solid (Filled)
+        - label: Duotone
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe the icon and its use case.
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Reference Image URL
+      description: Provide a link to a reference image if possible.
+  - type: textarea
+    id: svg_code
+    attributes:
+      label: SVG Code (Optional)
+      description: If you have the SVG code, please paste it here.
+      render: xml

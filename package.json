@@ -1,0 +1,26 @@
+{
+  "name": "@boxicons/core",
+  "version": "1.0.0",
+  "description": "Source SVG assets and core definitions for Boxicons",
+  "main": "index.js",
+  "files": [
+    "svg",
+    "icons.json",
+    "index.js"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate-metadata.js",
+    "build": "npm run generate && npm publish --access public"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "boxicons",
+    "icons",
+    "svg",
+    "assets"
+  ],
+  "author": "Boxicons",
+  "license": "MIT"
+}
