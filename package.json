@@ -1,16 +1,17 @@
 {
   "name": "@boxicons/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Source SVG assets and core definitions for Boxicons",
   "main": "index.js",
   "files": [
     "svg",
     "icons.json",
-    "index.js"
+    "index.js",
+    "fonts"
   ],
   "scripts": {
     "generate": "node scripts/generate-metadata.js",
-    "build": "npm run generate && npm publish --access public"
+    "publish": "npm run generate && npm publish --access public"
   },
   "publishConfig": {
     "access": "public"
