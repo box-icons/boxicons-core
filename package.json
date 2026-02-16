@@ -1,6 +1,6 @@
 {
   "name": "@boxicons/core",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Source SVG assets and core definitions for Boxicons",
   "main": "index.js",
   "files": [
@@ -10,8 +10,11 @@
     "fonts"
   ],
   "scripts": {
-    "generate": "node scripts/generate-metadata.js",
-    "prepublishOnly": "npm run generate "
+    "generate": "node scripts/generate-metadata.js && node scripts/update-skill.js",
+    "prepublishOnly": "npm run generate",
+    "changeset": "changeset",
+    "bump": "changeset version",
+    "release": "npm publish"
   },
   "publishConfig": {
     "access": "public"
@@ -28,5 +31,8 @@
   "repository": {
     "type": "git",
     "url": "http://github.com/box-icons/boxicons-core"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8"
   }
 }

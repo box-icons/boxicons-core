@@ -1,0 +1,35 @@
+name: Update Skill Stats
+
+on:
+  # Run when code is pushed to main (e.g. after a release)
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/free/boxicons-core/package.json'
+      - 'packages/free/boxicons-core/icons.json'
+
+jobs:
+  update-skill:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Update Skill File
+        run: |
+          cd packages/free/boxicons-core
+          npm run generate
+          
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: update SKILL.md stats"
+          file_pattern: "packages/free/boxicons-core/SKILL.md"
